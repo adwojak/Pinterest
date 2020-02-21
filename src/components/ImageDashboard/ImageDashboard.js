@@ -1,0 +1,34 @@
+import React from "react";
+import ImageRow from "./ImageRow";
+import { imagePlaceholders, w } from "../../constants";
+
+export default () => {
+  const groupImages = () => {
+    const groups = [];
+    let singleGroup = [];
+    let summary = 0;
+    imagePlaceholders.map((image, i) => {
+      summary += image.width;
+      singleGroup.push(image);
+      if (summary >= w) {
+        groups.push(singleGroup);
+        singleGroup = [];
+        summary = 0;
+      } else {
+        if (i == imagePlaceholders.length - 1) {
+          groups.push([image]);
+        }
+      }
+    });
+
+    return groups;
+  };
+
+  return (
+    <div style={{ width: w }}>
+      {groupImages().map(group => (
+        <ImageRow group={group} />
+      ))}
+    </div>
+  );
+};
