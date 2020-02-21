@@ -25,6 +25,13 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "node-sass": "^4.13.1"
+    "@types/node": "^13.7.4",
+    "@types/react": "^16.9.22",
+    "@types/react-dom": "^16.9.5",
+    "node-sass": "^4.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "typescript": "^3.8.2"
   }
 }
