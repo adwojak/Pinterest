@@ -1,6 +1,7 @@
 import React from "react";
 import ImageRow from "./ImageRow";
 import { imagePlaceholders, w } from "../../constants";
+import "./ImageDashboard.scss";
 
 export default () => {
   const groupImages = () => {
@@ -25,7 +26,7 @@ export default () => {
   };
 
   return (
-    <div style={{ width: w }}>
+    <div className="ImageDashboard" style={{ width: w }}>
       {groupImages().map(group => (
         <ImageRow group={group} />
       ))}

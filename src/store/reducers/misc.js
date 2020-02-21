@@ -7,7 +7,6 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case IS_LOADING:
-      console.log("loading");
       return { ...state, isLoading: true };
     case IS_NOT_LOADING:
       return { ...state, isLoading: false };
