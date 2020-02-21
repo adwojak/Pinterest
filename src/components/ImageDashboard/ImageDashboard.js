@@ -16,10 +16,11 @@ export default () => {
         singleGroup = [];
         summary = 0;
       } else {
-        if (i == imagePlaceholders.length - 1) {
+        if (i === imagePlaceholders.length - 1) {
           groups.push([image]);
         }
       }
+      return null;
     });
 
     return groups;

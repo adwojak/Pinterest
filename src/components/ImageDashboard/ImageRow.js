@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { placeholderUrl, w, m } from "../../constants";
 import "./ImageRow.scss";
 
 export default ({ group }) => {
-  if (group.length == 1) return <Image image={group[0]} />;
+  if (group.length === 1) return <Image image={group[0]} />;
   let imagesToDisplay = [];
   const scaleToSameSize = () => {
     const smallestHeight = Math.min.apply(

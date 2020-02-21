@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { isLoading, isNotLoading } from "../store/actions/misc";
 import ImageDashboard from "./ImageDashboard/ImageDashboard";
 import Loader from "./Loader/Loader";
-import "./App.scss";
 
 export default () => {
   const dispatch = useDispatch();
