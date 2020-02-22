@@ -1,4 +1,6 @@
-export const placeholderUrl = "https://via.placeholder.com/";
+// export const placeholderUrl = "https://via.placeholder.com
+export const placeholderUrl = (width, height) =>
+  `https://placeimg.com/${width}/${height}/any`;
 export const w = 800;
 export const m = 20;
 export const imagePlaceholders = [

@@ -6,7 +6,7 @@ import "./Image.scss";
 
 export default ({ image: { width, height } }) => {
   const dispatch = useDispatch();
-  const url = `${placeholderUrl}${width}x${height}`;
+  const url = placeholderUrl(width, height);
 
   const dialogOpen = () => {
     dispatch(openDialog(url));
