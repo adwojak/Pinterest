@@ -28,8 +28,8 @@ export default () => {
 
   return (
     <div className="ImageDashboard" style={{ width: w }}>
-      {groupImages().map(group => (
-        <ImageRow group={group} />
+      {groupImages().map((group, i) => (
+        <ImageRow key={i} group={group} />
       ))}
     </div>
   );

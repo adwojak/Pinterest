@@ -1,5 +1,6 @@
 import React from "react";
-import { placeholderUrl, w, m } from "../../constants";
+import { w, m } from "../../constants";
+import Image from "./Image";
 import "./ImageRow.scss";
 
 export default ({ group }) => {
@@ -28,15 +29,9 @@ export default ({ group }) => {
   };
   return (
     <span className="ImageRow">
-      {scaleToSameSize().map(image => (
-        <Image image={image} />
+      {scaleToSameSize().map((image, i) => (
+        <Image key={i} image={image} />
       ))}
     </span>
   );
-};
-
-const Image = ({ image: { width, height } }) => {
-  const url = `${placeholderUrl}${width}x${height}`;
-
-  return <img style={{ marginBottom: m }} src={url} alt={url} />;
 };

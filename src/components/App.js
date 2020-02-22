@@ -3,18 +3,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { isLoading, isNotLoading } from "../store/actions/misc";
 import ImageDashboard from "./ImageDashboard/ImageDashboard";
 import Loader from "./Loader/Loader";
+import Dialog from "./Dialog/Dialog";
 
 export default () => {
   const dispatch = useDispatch();
   const loading = useSelector(state => state.misc.isLoading);
+  const { isDialogOpened, dialogImgUrl } = useSelector(state => state.misc);
 
   useEffect(() => {
     dispatch(isLoading());
     setInterval(() => {
-      console.log("Fake loading");
       dispatch(isNotLoading());
     }, 2000);
   }, []);
 
-  return <Fragment>{loading ? <Loader /> : <ImageDashboard />}</Fragment>;
+  return (
+    <Fragment>
+      {isDialogOpened && <Dialog imgUrl={dialogImgUrl} />}
+      {loading ? <Loader /> : <ImageDashboard />}
+    </Fragment>
+  );
 };
