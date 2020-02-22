@@ -3,7 +3,7 @@ import {
   IS_NOT_LOADING,
   OPEN_DIALOG,
   CLOSE_DIALOG
-} from "../action-types";
+} from "src/store/action-types";
 
 export const isLoading = (): Function => (dispatch: Function): void => {
   dispatch({ type: IS_LOADING });
