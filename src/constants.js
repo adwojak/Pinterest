@@ -1,4 +1,5 @@
-// export const placeholderUrl = "https://via.placeholder.com
+export const errorPlaceholderUrl = (width, height) =>
+  `https://via.placeholder.com/${width}x${height}?text=Error+While+Loading+Photo`;
 export const placeholderUrl = (width, height) =>
   `https://placeimg.com/${width}/${height}/any`;
 export const w = 800;
