@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import ImageRow from "./ImageRow";
 import { imagePlaceholders, w } from "../../constants";
+import { loadImages } from "../../store/actions/images";
+
 import "./ImageDashboard.scss";
 
 export default () => {
+  const dispatch = useDispatch();
   const [displayPhotos, setDisplayPhotos] = useState(true);
   const groupImages = () => {
     const groups = [];
@@ -28,8 +32,12 @@ export default () => {
   };
 
   useEffect(() => {
-    !displayPhotos && reloadImages();
-  }, [displayPhotos]);
+    dispatch(loadImages());
+  }, []);
+
+  // useEffect(() => {
+  //   !displayPhotos && reloadImages();
+  // }, [displayPhotos]);
 
   const reloadImages = () => {
     setDisplayPhotos(!displayPhotos);
