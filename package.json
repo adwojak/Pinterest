@@ -28,6 +28,8 @@
     "@types/node": "^13.7.4",
     "@types/react": "^16.9.22",
     "@types/react-dom": "^16.9.5",
+    "compass": "^0.1.1",
+    "compass-mixins": "^0.12.10",
     "node-sass": "^4.13.1",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",

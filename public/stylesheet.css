@@ -5,3 +5,7 @@
   display: flex;
   justify-content: center;
 }
+
+body {
+  background-color: rgb(31, 59, 53);
+}

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ImageRow from "./ImageRow";
-import Button from "../Button/Button";
 import { imagePlaceholders, w } from "../../constants";
 import "./ImageDashboard.scss";
 
@@ -37,10 +36,25 @@ export default () => {
   };
 
   return (
-    <div className="ImageDashboard" style={{ width: w }}>
-      <Button onClick={reloadImages}>Reload images</Button>
-      {displayPhotos &&
-        groupImages().map((group, i) => <ImageRow key={i} group={group} />)}
+    <div className="ImageDashboardWrapper">
+      <div className="ImageDashboardSide">
+        <div className="Text">
+          <p className="Script">
+            <span>Full size</span>
+          </p>
+          <p className="Shadow text1">SCALING</p>
+          <p className="Shadow text2">IMG</p>
+          <p className="Shadow text3">FOR YOU</p>
+          <p className="Shadow text3">VISUAL MEDIA</p>
+          <p className="Script Clickable">
+            <span onClick={reloadImages}>Reload images</span>
+          </p>
+        </div>
+      </div>
+      <div className="ImageDashboard" style={{ width: w }}>
+        {displayPhotos &&
+          groupImages().map((group, i) => <ImageRow key={i} group={group} />)}
+      </div>
     </div>
   );
 };

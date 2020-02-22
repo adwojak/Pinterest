@@ -18,7 +18,7 @@ export default ({ image: { width, height } }) => {
       {errorUrl ? (
         <img
           className="Image"
-          style={{ marginBottom: m }}
+          style={{ marginBottom: m, marginRight: m }}
           src={errorUrl}
           alt={errorUrl}
         />
@@ -26,7 +26,7 @@ export default ({ image: { width, height } }) => {
         <img
           className="Image"
           onClick={dialogOpen}
-          style={{ marginBottom: m }}
+          style={{ marginBottom: m, marginRight: m }}
           src={url}
           alt={url}
           onError={() => {
