@@ -1,0 +1,11 @@
+.ButtonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .Button {
+    width: 40%;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+}
