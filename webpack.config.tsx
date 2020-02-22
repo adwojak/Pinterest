@@ -85,15 +85,14 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
-      src: path.join(__dirname, "src"),
-      public: path.join(__dirname, "public")
+      src: path.join(__dirname, "src")
     }
   },
   mode: "development",
   devtool: "source-map",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "public/index.html"
+      template: "src/index.html"
     }),
     new MiniCssExtractPlugin()
   ]
