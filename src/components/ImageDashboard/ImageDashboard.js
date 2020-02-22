@@ -45,7 +45,7 @@ export default () => {
           <p className="Shadow text1">SCALING</p>
           <p className="Shadow text2">IMG</p>
           <p className="Shadow text3">FOR YOU</p>
-          <p className="Shadow text3">VISUAL MEDIA</p>
+          <p className="Shadow text4">VISUAL MEDIA</p>
           <p className="Script Clickable">
             <span onClick={reloadImages}>Reload images</span>
           </p>
