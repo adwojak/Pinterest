@@ -1,12 +1,5 @@
-.ImageDashboardWrapper {
-  width: 75%;
-  background-color: rgb(12, 97, 70);
+.ImageDashboard {
   display: flex;
-  justify-content: flex-end;
-
-  .ImageDashboard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

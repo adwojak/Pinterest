@@ -16,12 +16,10 @@ export default () => {
   }, []);
 
   return (
-    <div className="ImageDashboardWrapper">
-      <div className="ImageDashboard" style={{ width: w }}>
-        {imagesUrl.map((image, key) => (
-          <Image key={key} image={image} />
-        ))}
-      </div>
+    <div className="ImageDashboard" style={{ width: w }}>
+      {imagesUrl.map((image, key) => (
+        <Image key={key} image={image} />
+      ))}
     </div>
   );
 };

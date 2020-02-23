@@ -1,12 +1,14 @@
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
 import ImageDashboard from "src/components/ImageDashboard/ImageDashboard";
+import { MiscState } from "src/store/reducers/misc";
 import Loader from "src/components/Loader/Loader";
 import Dialog from "src/components/Dialog/Dialog";
+import MainBlock from "src/components/MainBlock/MainBlock";
+import Heading from "src/components/Heading/Heading";
 import "src/components/App.scss";
-import { MiscState } from "src/store/reducers/misc";
 
-export default () => {
+export default (): JSX.Element => {
   const loading = useSelector((state: any): boolean => state.misc.isLoading);
   const {
     isDialogOpened,
@@ -17,9 +19,11 @@ export default () => {
 
   return (
     <Fragment>
-      {loading && <Loader />}
-      {isDialogOpened && <Dialog imgUrl={dialogImgUrl} />}
-      <ImageDashboard />
+      {/* {loading && <Loader />}
+      {isDialogOpened && <Dialog imgUrl={dialogImgUrl} />} */}
+      <Heading />
+      <MainBlock />
+      {/* <ImageDashboard /> */}
     </Fragment>
   );
 };
