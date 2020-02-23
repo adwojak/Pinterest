@@ -1,7 +1,7 @@
 import * as React from "react";
-import "./Loader.scss";
+import "src/components/Loader/Loader.scss";
 
-export default () => {
+export default (): JSX.Element => {
   return (
     <div className="LoaderWrapper">
       <div className="Loader"></div>

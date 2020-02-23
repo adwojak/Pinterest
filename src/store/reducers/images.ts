@@ -7,7 +7,7 @@ const initialState: Object = {
 export default (
   state: Object = initialState,
   action: { type: string; payload: Object }
-) => {
+): Object => {
   switch (action.type) {
     case LOAD_IMAGES:
       return { ...state, images: action.payload };

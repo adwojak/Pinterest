@@ -3,15 +3,24 @@ import {
   IS_NOT_LOADING,
   OPEN_DIALOG,
   CLOSE_DIALOG
-} from "../action-types";
+} from "src/store/action-types";
 
-const initialState = {
+export interface MiscState {
+  isLoading: boolean;
+  isDialogOpened: boolean;
+  dialogImgUrl: string;
+}
+
+const initialState: MiscState = {
   isLoading: false,
   isDialogOpened: false,
   dialogImgUrl: null
 };
 
-export default (state = initialState, action) => {
+export default (
+  state: Object = initialState,
+  action: { type: string; payload: Object }
+): Object => {
   switch (action.type) {
     case IS_LOADING:
       return { ...state, isLoading: true };

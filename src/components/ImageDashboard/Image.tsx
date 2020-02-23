@@ -1,10 +1,10 @@
 import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
-import { openDialog } from "../../store/actions/misc";
-import { errorPlaceholderUrl, m } from "../../constants";
-import "./Image.scss";
+import { openDialog } from "src/store/actions/misc";
+import { errorPlaceholderUrl, m } from "src/misc/constants";
+import "src/components/ImageDashboard/Image.scss";
 
-export default ({ image }) => {
+export default ({ image }: { image: string }): JSX.Element => {
   const [errorUrl, setErrorUrl] = useState(null);
   const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ export default ({ image }) => {
           style={{ marginBottom: m }}
           src={image}
           alt={image}
-          onError={() => {
+          onError={(): void => {
             setErrorUrl(errorPlaceholderUrl(400, 400));
           }}
         />

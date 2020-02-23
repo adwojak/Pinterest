@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { w } from "../../constants";
-import { loadImages } from "../../store/actions/images";
-import Image from "./Image";
-import "./ImageDashboard.scss";
+import { w } from "src/misc/constants";
+import { loadImages } from "src/store/actions/images";
+import Image from "src/components/ImageDashboard/Image";
+import "src/components/ImageDashboard/ImageDashboard.scss";
 
 export default () => {
   const dispatch = useDispatch();
-  const imagesUrl = useSelector(state => state.images.images);
+  const imagesUrl = useSelector(
+    (state: any): Array<string> => state.images.images
+  );
 
   useEffect(() => {
     dispatch(loadImages());

@@ -1,11 +1,15 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
-export const axiosGet = async (url: string) => {
-  const response = await axios.get(url);
-  return response;
-};
+export const axiosGet: Function = async (url: string): Promise<AxiosResponse> =>
+  await axios.get(url);
 
-export const axiosChain = (items: Array<any>, responsesHandler: Function) =>
+export const axiosChain: Function = (
+  items: Array<any>,
+  responsesHandler: Function
+): void => {
   axios
     .all(items)
-    .then(axios.spread((...response) => responsesHandler(response)));
+    .then(
+      axios.spread((...responses): Function => responsesHandler(responses))
+    );
+};

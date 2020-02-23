@@ -10,11 +10,11 @@ interface ScaledImage {
   scaledHeight: number;
 }
 
-export default () => {
+export default (): Array<Image> => {
   let formattedImages: Array<Image> = [];
   let singleGroup: Array<Object> = [];
   let summary: number = 0;
-  imagePlaceholders.forEach((image: Image, i: number) => {
+  imagePlaceholders.forEach((image: Image, i: number): void => {
     summary += image.width;
     singleGroup.push(image);
     if (summary >= w) {
@@ -28,26 +28,30 @@ export default () => {
   return formattedImages;
 };
 
-const formatSingleGroup = (group: Array<Object>) => {
+const formatSingleGroup = (group: Array<Object>): Array<Image> => {
   group.length === 1 && group;
   const smallestHeight: number = Math.min.apply(
     null,
     group.map((image: Image) => image.height)
   );
-  const scaledToSameSize: Array<Object> = group.map((image: Image) => {
-    const scale: number = smallestHeight / image.height;
-    return {
-      scaledWidth: image.width * scale,
-      scaledHeight: image.height * scale
-    };
-  });
+  const scaledToSameSize: Array<Object> = group.map(
+    (image: Image): ScaledImage => {
+      const scale: number = smallestHeight / image.height;
+      return {
+        scaledWidth: image.width * scale,
+        scaledHeight: image.height * scale
+      };
+    }
+  );
   const finalScale: number =
     (w - m * (group.length - 1)) /
     scaledToSameSize
-      .map((image: ScaledImage) => image.scaledWidth)
-      .reduce((a: number, b: number) => a + b);
-  return scaledToSameSize.map((image: ScaledImage) => ({
-    width: Math.round(image.scaledWidth * finalScale),
-    height: Math.round(image.scaledHeight * finalScale)
-  }));
+      .map((image: ScaledImage): number => image.scaledWidth)
+      .reduce((a: number, b: number): number => a + b);
+  return scaledToSameSize.map(
+    (image: ScaledImage): Image => ({
+      width: Math.round(image.scaledWidth * finalScale),
+      height: Math.round(image.scaledHeight * finalScale)
+    })
+  );
 };
