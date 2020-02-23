@@ -1,100 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Arvo:700);
-@import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
-.Text {
-  width: 210px;
-  margin: 150px auto;
-
-  .Shadow {
-    color: #fff;
-    font-family: Arvo;
-    font-weight: bold;
-    text-shadow: -3px -3px 0 #222, 3px -3px 0 #222, -3px 3px 0 #222,
-      3px 3px 0 #222, 4px 4px 0 #fff, 5px 5px 0 #fff, 6px 6px 0 #fff,
-      7px 7px 0 #fff;
-    line-height: 0.8em;
-    letter-spacing: 0.1em;
-    transform: scaleY(0.7);
-    -webkit-transform: scaleY(0.7);
-    -moz-transform: scaleY(0.7);
-    margin: 0;
-    margin-top: 15px;
-    text-align: center;
-
-    &.text1 {
-      font-size: 30px;
-    }
-
-    &.text2 {
-      font-size: 70px;
-    }
-
-    &.text3 {
-      width: 270px;
-      font-size: 50px;
-      margin-left: -25px;
-    }
-
-    &.text4 {
-      font-size: 50px;
-    }
-  }
-
-  .Script {
-    font-family: "Seaweed Script";
-    color: #fff;
-    text-align: center;
-    font-size: 40px;
-    position: relative;
-    margin: 0;
-    margin-top: 20px;
-
-    span {
-      background-color: #222;
-      padding: 0 0.3em;
-    }
-
-    &.Clickable {
-      width: 230px;
-      cursor: pointer;
-    }
-  }
-}
-
-@mixin fadeIn {
-  opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 1s;
-
-  @keyframes fadeInOpacity {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-}
-
 .ImageDashboardWrapper {
   width: 75%;
   background-color: rgb(12, 97, 70);
   display: flex;
   justify-content: flex-end;
 
-  .ImageDashboardSide {
-    width: 100%;
-    margin-top: 20px;
-
-    .Title {
-      color: white;
-      font-size: 40px;
-    }
-  }
-
   .ImageDashboard {
-    margin-right: 20px;
-    @include fadeIn();
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }

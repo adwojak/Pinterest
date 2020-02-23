@@ -4,10 +4,10 @@ import { openDialog } from "../../store/actions/misc";
 import { errorPlaceholderUrl, placeholderUrl, m } from "../../constants";
 import "./Image.scss";
 
-export default ({ image: { width, height } }) => {
+export default ({ image }) => {
   const [errorUrl, setErrorUrl] = useState(null);
   const dispatch = useDispatch();
-  const url = placeholderUrl(width, height);
+  // const url = placeholderUrl(width, height);
 
   const dialogOpen = () => {
     dispatch(openDialog(url));
@@ -18,7 +18,7 @@ export default ({ image: { width, height } }) => {
       {errorUrl ? (
         <img
           className="Image"
-          style={{ marginBottom: m, marginRight: m }}
+          style={{ marginBottom: m }}
           src={errorUrl}
           alt={errorUrl}
         />
@@ -26,11 +26,11 @@ export default ({ image: { width, height } }) => {
         <img
           className="Image"
           onClick={dialogOpen}
-          style={{ marginBottom: m, marginRight: m }}
-          src={url}
-          alt={url}
+          style={{ marginBottom: m }}
+          src={image}
+          alt={image}
           onError={() => {
-            setErrorUrl(errorPlaceholderUrl(width, height));
+            // setErrorUrl(errorPlaceholderUrl(width, height));
           }}
         />
       )}

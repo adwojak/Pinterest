@@ -25,8 +25,9 @@ export default () => {
 
   return (
     <Fragment>
+      {loading && <Loader />}
       {/* {isDialogOpened && <Dialog imgUrl={dialogImgUrl} />} */}
-      {/* {loading ? <Loader /> : <ImageDashboard />} */}\
+      {/* {loading ? <Loader /> : <ImageDashboard />} */}
       <ImageDashboard />
     </Fragment>
   );
