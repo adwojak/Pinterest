@@ -10,7 +10,6 @@ export default (
 ) => {
   switch (action.type) {
     case LOAD_IMAGES:
-      console.log(action.payload);
       return { ...state, images: action.payload };
     default:
       return state;

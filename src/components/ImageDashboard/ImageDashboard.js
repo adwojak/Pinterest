@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import ImageRow from "./ImageRow";
 import { imagePlaceholders, w } from "../../constants";
 import { loadImages } from "../../store/actions/images";
+import resizer from "../../misc/resizer";
 
 import "./ImageDashboard.scss";
 
@@ -32,6 +33,7 @@ export default () => {
   };
 
   useEffect(() => {
+    resizer();
     dispatch(loadImages());
   }, []);
 
