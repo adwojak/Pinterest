@@ -1,16 +1,15 @@
 import React, { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import { openDialog } from "../../store/actions/misc";
-import { errorPlaceholderUrl, placeholderUrl, m } from "../../constants";
+import { errorPlaceholderUrl, m } from "../../constants";
 import "./Image.scss";
 
 export default ({ image }) => {
   const [errorUrl, setErrorUrl] = useState(null);
   const dispatch = useDispatch();
-  // const url = placeholderUrl(width, height);
 
   const dialogOpen = () => {
-    dispatch(openDialog(url));
+    dispatch(openDialog(image));
   };
 
   return (
@@ -30,7 +29,7 @@ export default ({ image }) => {
           src={image}
           alt={image}
           onError={() => {
-            // setErrorUrl(errorPlaceholderUrl(width, height));
+            setErrorUrl(errorPlaceholderUrl(400, 400));
           }}
         />
       )}
