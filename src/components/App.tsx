@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
-import ImageDashboard from "src/components/ImageDashboard/ImageDashboard";
 import { MiscState } from "src/store/reducers/misc";
 import Loader from "src/components/Loader/Loader";
 import Dialog from "src/components/Dialog/Dialog";
@@ -19,11 +18,10 @@ export default (): JSX.Element => {
 
   return (
     <Fragment>
-      {/* {loading && <Loader />}
-      {isDialogOpened && <Dialog imgUrl={dialogImgUrl} />} */}
+      {loading && <Loader />}
+      {isDialogOpened && <Dialog imgUrl={dialogImgUrl} />}
       <Heading />
       <MainBlock />
-      {/* <ImageDashboard /> */}
     </Fragment>
   );
 };
