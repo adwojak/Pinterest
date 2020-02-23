@@ -7,6 +7,7 @@ import {
 } from "src/store/action-types";
 
 export const isLoading = (): Function => (dispatch: Function): void => {
+  document.body.style.overflow = "hidden";
   dispatch({ type: IS_LOADING });
 };
 
@@ -16,6 +17,7 @@ export const isNotLoading = (): Function => async (
   await dispatch({ type: IS_NOT_LOADING });
   setTimeout(() => {
     dispatch({ type: LOADING_OFFSET_OFF });
+    document.body.style.overflow = "visible";
   }, 1000);
 };
 
