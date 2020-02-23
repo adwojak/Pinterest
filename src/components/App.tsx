@@ -8,17 +8,16 @@ import Heading from "src/components/Heading/Heading";
 import "src/components/App.scss";
 
 export default (): JSX.Element => {
-  const loading = useSelector((state: any): boolean => state.misc.isLoading);
   const {
     isDialogOpened,
+    isLoading,
+    loadingOffset,
     dialogImgUrl
-  }: { isDialogOpened: boolean; dialogImgUrl: string } = useSelector(
-    (state: any): MiscState => state.misc
-  );
+  }: MiscState = useSelector((state: any): MiscState => state.misc);
 
   return (
     <Fragment>
-      {loading && <Loader />}
+      {(isLoading || loadingOffset) && <Loader loadingOffset={loadingOffset} />}
       {isDialogOpened && <Dialog imgUrl={dialogImgUrl} />}
       <Heading />
       <MainBlock />

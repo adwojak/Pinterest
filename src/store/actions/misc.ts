@@ -1,6 +1,7 @@
 import {
   IS_LOADING,
   IS_NOT_LOADING,
+  LOADING_OFFSET_OFF,
   OPEN_DIALOG,
   CLOSE_DIALOG
 } from "src/store/action-types";
@@ -9,8 +10,13 @@ export const isLoading = (): Function => (dispatch: Function): void => {
   dispatch({ type: IS_LOADING });
 };
 
-export const isNotLoading = (): Function => (dispatch: Function): void => {
-  dispatch({ type: IS_NOT_LOADING });
+export const isNotLoading = (): Function => async (
+  dispatch: Function
+): Promise<void> => {
+  await dispatch({ type: IS_NOT_LOADING });
+  setTimeout(() => {
+    dispatch({ type: LOADING_OFFSET_OFF });
+  }, 1000);
 };
 
 export const openDialog = (payload: any): Function => (
