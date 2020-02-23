@@ -3,11 +3,11 @@ import axios, { AxiosResponse } from "axios";
 export const axiosGet: Function = async (url: string): Promise<AxiosResponse> =>
   await axios.get(url);
 
-export const axiosChain: Function = (
+export const axiosChain: Function = async (
   items: Array<any>,
   responsesHandler: Function
-): void => {
-  axios
+): Promise<void> => {
+  await axios
     .all(items)
     .then(
       axios.spread((...responses): Function => responsesHandler(responses))
