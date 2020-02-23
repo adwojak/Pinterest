@@ -1,6 +1,40 @@
 .Content {
   width: 100%;
-  background-color: red;
-  height: 1600px;
   display: inline-block;
+  margin-bottom: 30px;
+
+  .Article {
+    display: flex;
+    flex-direction: column;
+    color: rgb(179, 179, 179);
+    margin: 0 40px 0 40px;
+    text-align: justify;
+    font-size: 30px;
+
+    &.Start {
+      align-items: flex-start;
+    }
+
+    &.Center {
+      align-items: center;
+    }
+
+    &.End {
+      align-items: flex-end;
+    }
+
+    .Title {
+      font-size: 70px;
+      width: 200px;
+      color: rgb(207, 207, 207);
+    }
+  }
+
+  .Split {
+    width: 80%;
+    height: 10px;
+    background-color: orange;
+    border: none;
+    margin-top: 40px;
+  }
 }

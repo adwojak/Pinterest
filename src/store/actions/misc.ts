@@ -15,9 +15,9 @@ export const isNotLoading = (): Function => async (
   dispatch: Function
 ): Promise<void> => {
   await dispatch({ type: IS_NOT_LOADING });
+  document.body.style.overflow = "visible";
   setTimeout(() => {
     dispatch({ type: LOADING_OFFSET_OFF });
-    document.body.style.overflow = "visible";
   }, 1000);
 };
 
