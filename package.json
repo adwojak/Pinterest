@@ -1,9 +1,19 @@
 {
-  "name": "first",
-  "version": "0.1.0",
+  "name": "Pinterest",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adwojak/Pinterest.git"
+  },
+  "author": "adwojak",
+  "license": "ISC",
+  "homepage": "https://github.com/adwojak/NGHeroes#readme",
+  "bugs": {
+    "url": "https://github.com/adwojak/Pinterest/issues"
   },
   "browserslist": [
     ">0.2%",
@@ -26,12 +36,9 @@
     "autoprefixer": "^9.7.4",
     "axios": "^0.19.1",
     "babel-loader": "^8.0.6",
-    "compass": "^0.1.1",
-    "compass-mixins": "^0.12.10",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
-    "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
