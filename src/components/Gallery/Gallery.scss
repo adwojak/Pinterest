@@ -1,0 +1,90 @@
+.Gallery {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+
+  .HideImage {
+    @keyframes HideImageAnimation {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    animation: HideImageAnimation 0.75s linear forwards;
+  }
+
+  .ShowImage {
+    @keyframes ShowImage {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    animation: ShowImageAnimation 0.75s ease-in;
+  }
+
+  .Back {
+    position: relative;
+    width: 40px;
+    height: 100%;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 52%;
+      background-color: rgb(179, 179, 179);
+      transform: rotate(15deg);
+      border-radius: 10px;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      width: 10px;
+      height: 52%;
+      background-color: rgb(179, 179, 179);
+      transform: rotate(-15deg);
+      border-radius: 10px;
+    }
+  }
+
+  .Forward {
+    position: relative;
+    width: 40px;
+    height: 100%;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      width: 10px;
+      height: 52%;
+      background-color: rgb(179, 179, 179);
+      transform: rotate(-15deg);
+      border-radius: 10px;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      right: 0;
+      width: 10px;
+      height: 52%;
+      background-color: rgb(179, 179, 179);
+      transform: rotate(15deg);
+      border-radius: 10px;
+    }
+  }
+}

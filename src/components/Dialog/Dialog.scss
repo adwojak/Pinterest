@@ -16,7 +16,7 @@
 }
 
 .DialogWrapper {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,6 +24,8 @@
   height: 100%;
   background-color: rgba(97, 97, 97, 0.6);
   z-index: 100;
+  top: 0;
+  left: 0;
 
   @include fadeIn;
 
@@ -32,7 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(12, 97, 70);
+    background-color: rgb(30, 30, 30);
     min-width: 60%;
     min-height: 60%;
 
@@ -40,6 +42,8 @@
       position: absolute;
       right: 10px;
       top: 10px;
+      margin: 0;
+      color: rgb(255, 255, 255);
       font-size: 30px;
       cursor: pointer;
     }

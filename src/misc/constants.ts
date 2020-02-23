@@ -5,6 +5,7 @@ export const errorPlaceholderUrl: Function = (
   `https://via.placeholder.com/${width}x${height}?text=Error+While+Loading+Photo`;
 
 export const imageUrl: string = "https://picsum.photos/";
+export const galleryImageUrl: string = `${imageUrl}720/400`;
 export const w: number = 800;
 export const m: number = 20;
 export const imagePlaceholders: Array<Object> = [
