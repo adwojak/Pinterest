@@ -1,26 +1,14 @@
-import React, { Fragment } from "react";
-import { useSelector } from "react-redux";
-import { MiscState } from "src/store/reducers/misc";
-import Loader from "src/components/Loader/Loader";
-import Dialog from "src/components/Dialog/Dialog";
-import MainBlock from "src/components/MainBlock/MainBlock";
-import Heading from "src/components/Heading/Heading";
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import ImagesComponent from "src/components/ImageDashboard/ImagesComponent";
+import TransportGroup from "src/components/TransportGroup/TransportGroup";
 import "src/components/App.scss";
 
 export default (): JSX.Element => {
-  const {
-    isDialogOpened,
-    isLoading,
-    loadingOffset,
-    dialogImgUrl
-  }: MiscState = useSelector((state: any): MiscState => state.misc);
-
   return (
-    <Fragment>
-      {(isLoading || loadingOffset) && <Loader loadingOffset={loadingOffset} />}
-      {isDialogOpened && <Dialog imgUrl={dialogImgUrl} />}
-      <Heading />
-      <MainBlock />
-    </Fragment>
+    <Switch>
+      <Route exact path="/images" component={ImagesComponent} />
+      <Route path="/" component={TransportGroup} />
+    </Switch>
   );
 };
