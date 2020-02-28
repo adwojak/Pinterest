@@ -1,0 +1,55 @@
+.SquareImage {
+  width: 330px;
+  height: 330px;
+  margin: 15px 0 15px 0;
+  color: white;
+  font-weight: bold;
+
+  .Title {
+    width: 50%;
+    float: right;
+    text-align: right;
+    font-size: 18px;
+    margin: 30px 20px 0 0;
+
+    .Dash {
+      color: orange;
+      margin-right: 5px;
+    }
+  }
+
+  .OverlayText {
+    float: right;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    visibility: hidden;
+    margin-top: 30px;
+  }
+
+  &.World {
+    background-image: url("../../../../static/images/world.png");
+  }
+
+  &.Truck {
+    background-image: url("../../../../static/images/truck.png");
+  }
+
+  &.Plants {
+    background-image: url("../../../../static/images/plants.png");
+  }
+
+  &.Human {
+    background-image: url("../../../../static/images/human.png");
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+    transition: all 0.3s;
+
+    .OverlayText {
+      visibility: visible;
+    }
+  }
+}

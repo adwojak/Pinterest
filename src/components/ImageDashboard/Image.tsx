@@ -16,14 +16,14 @@ export default ({ image }: { image: string }): JSX.Element => {
     <Fragment>
       {errorUrl ? (
         <img
-          className="Image"
+          className="Image2"
           style={{ marginBottom: m }}
           src={errorUrl}
           alt={errorUrl}
         />
       ) : (
         <img
-          className="Image"
+          className="Image2"
           onClick={dialogOpen}
           style={{ marginBottom: m }}
           src={image}

@@ -1,0 +1,21 @@
+.Button {
+  border: 1px solid;
+  padding: 15px 25px;
+  border-radius: 15px;
+  font-weight: bold;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+  }
+
+  &.White {
+    border-color: white;
+    color: white;
+  }
+
+  &.Black {
+    border-color: black;
+    color: black;
+  }
+}

@@ -8,7 +8,7 @@ import "src/components/TransportGroup/TransportGroup.scss";
 
 export default (): JSX.Element => {
   return (
-    <div>
+    <div className="TransportGroup">
       <Heading />
       <Logistics />
       <Transport />

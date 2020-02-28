@@ -1,11 +1,20 @@
-import React, { Fragment } from "react";
-import logo from "src/static/images/logo.png";
+import React, { useState } from "react";
+import classNames from "classnames";
+import Button from "src/components/TransportGroup/components/Button/Button";
 import "src/components/TransportGroup/HeadingBlock/Heading.scss";
 
 export default (): JSX.Element => {
+  const [isMouseOver, setMouseOver] = useState(false);
+
   return (
-    <div className="HeadingImage">
-      <img src={logo} alt="logo" className="Logo" />
+    <div className="Heading">
+      <div
+        className={classNames({
+          HeadingImage: true,
+          ApplyGrayscale: isMouseOver
+        })}
+      />
+      <div className="Logo"></div>
       <span className="Menu">
         <span className="Language">
           PL<i className="ArrowDown"></i>
@@ -31,13 +40,22 @@ export default (): JSX.Element => {
         <h4>ROAD TO SUCCESS</h4>
         <p>Rozwiązania logistyczne szyte na miarę Twojego biznesu</p>
         <span className="Bullets">
-          <span className="Bullet">Kierunki transportu</span>
-          <span className="Bullet">Logistyka kontraktowa</span>
+          <Button
+            onMouseOver={() => setMouseOver(true)}
+            onMouseOut={() => setMouseOver(false)}
+            white
+          >
+            Kierunki transportu
+          </Button>
+          <Button
+            onMouseOver={() => setMouseOver(true)}
+            onMouseOut={() => setMouseOver(false)}
+            white
+          >
+            Logistyka kontraktowa
+          </Button>
         </span>
       </div>
-
-      {/* <div className="Brush"></div> */}
-      {/* <img src={whiteBrush} alt="whiteBrush" /> */}
     </div>
   );
 };

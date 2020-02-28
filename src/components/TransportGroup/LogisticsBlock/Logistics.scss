@@ -1,0 +1,24 @@
+.Logistics {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+
+  h2 {
+    font-size: 65px;
+    margin-top: 0;
+
+    @media (max-width: 1200px) {
+      text-align: center;
+    }
+  }
+
+  .Images {
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 75px;
+  }
+}
